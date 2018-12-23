@@ -31,7 +31,7 @@ public class DemoController {
         return  client.getForObject("http://localhost:8999/rest/2",  Map.class);
     }
 
-    @GetMapping(value = "/h", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/circuit-breaker", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Map getDataHystrix() {
 
         HystrixCommand.Setter config = HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("slowService"));
